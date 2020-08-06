@@ -1,0 +1,27 @@
+.container-aspirasi {
+    background-color: color(tiga);
+    padding: 3em;
+    @include flex_column;
+
+    &_text {
+        text-align: center;
+        padding: 2em;
+        font-size: 1.4em;
+        color: color(white);
+        font-weight: bold;
+    }
+
+    &_iframe {
+        iframe {
+            width: 370px;
+
+            @include tablet {
+                width: 500px;
+            }
+
+            @include pc {
+                width: 900px;
+            }
+        }
+    }
+}

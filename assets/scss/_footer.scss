@@ -1,0 +1,65 @@
+.footer {
+    height: 6em;
+    margin-bottom: $navbar-bar-height;
+
+    background-color: color(satu_lighter);
+    @include flex_row;
+    justify-content: space-around;
+
+    @include tablet {
+        height: 7em;
+        margin-bottom: 0;
+    }
+
+    @include pc {
+        height: 8em;
+    }
+
+    &-copyright {
+        color: color(satu_darker);
+        font-size: .9rem;
+
+        @include tablet {
+            font-size: .8rem;
+        }
+
+        @include pc {
+            font-size: .7rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: color(satu_darker);
+
+            &:hover {
+                filter: drop-shadow(0 0 .3px color(dua));
+            }
+        }
+    }
+
+    &-contact {
+        @include flex_row;
+        width: 35%;
+        font-size: 1.6rem;
+        justify-content: space-around;
+        z-index: 2;
+
+        @include tablet {
+            width: 25%;
+            font-size: 1.8rem;
+        }
+
+        @include pc {
+            font-size: 2rem;
+            width: 20%;
+        }
+
+        a {
+            color: color(satu_darker);
+
+            &:hover {
+                filter: drop-shadow(0 0 1px color(dua));
+            }
+        }
+    }
+}

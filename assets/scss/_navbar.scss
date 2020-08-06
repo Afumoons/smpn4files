@@ -1,0 +1,261 @@
+.navbar {
+    position: fixed;
+    @include flex_row;
+    justify-content: space-around;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $navbar-height;
+    background-color: rgba(color(satu_darkest), 0);
+    transition: $transition;
+    z-index: 3;
+
+    &-logo {
+        @include flex_row;
+        color: color(satu_lighter);
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 0.1125rem;
+        font-size: 0.6rem;
+        transition: $transition_slow;
+        width: 65%;
+
+        &:hover {
+            filter: drop-shadow(0 0 5px color(dua));
+        }
+
+        @include tablet {
+            width: 45%;
+            transform: translateX(-4em);
+        }
+
+        @include pc {
+            width: 30%;
+            transform: translateX(0em);
+        }
+
+        &-img {
+            img {
+                height: 5em;
+                width: 5em;
+            }
+        }
+
+        &-text {
+            @include flex_column;
+            align-items: flex-start;
+            text-decoration: none;
+            padding-left: 1em;
+
+            p {
+                color: white;
+                font-weight: bold;
+            }
+
+        }
+    }
+
+    // &_logo_scroll {
+    //     letter-spacing: 0.3125rem;
+    //     font-size: 1.25rem;
+    //     color: color(white);
+    //     transform: translateX(0em);
+    //     pointer-events: all;
+    // }
+
+    &-nav_links {
+        list-style: none;
+        transition: $transition_slower;
+        padding-left: 0em;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        height: 100vh - $navbar_bar_height;
+        background-color: rgba(color(satu_darkest), 0.6);
+        @include flex_column;
+        justify-content: space-around;
+        width: 0%;
+        opacity: 0;
+        transition: $transition_fast;
+
+        @include tablet {
+            padding-left: 0em;
+            position: absolute;
+            left: auto;
+            right: 0;
+            top: 0vh;
+            height: 100vh;
+            background-color: rgba(color(satu_darkest), 0.6);
+            @include flex_column;
+            justify-content: space-around;
+            width: 0%;
+            opacity: 0;
+            transition: $transition_fast;
+        }
+
+        @include pc {
+            @include flex_row;
+            justify-content: space-around;
+            position: static;
+            width: 50%;
+            height: $navbar-bar-height;
+            opacity: 1;
+            pointer-events: all;
+            padding-left: 3em;
+            background-color: rgba(color(satu_darkest), 0);
+
+        }
+
+        &-scroll {
+            top: $navbar_height_scroll;
+            height: 100vh - $navbar-bar-height - $navbar_height_scroll;
+
+            @include tablet {
+                top: $navbar_height_scroll;
+                height: 100vh - $navbar_height_scroll;
+            }
+
+            @include pc {
+                top: 0;
+                height: $navbar_height;
+            }
+        }
+
+        &-click {
+            opacity: 1;
+            width: 50%;
+
+            @include tablet {
+                width: 40%;
+            }
+        }
+
+        li {
+            a {
+                text-align: center;
+                color: color(white);
+                text-decoration: none;
+                letter-spacing: 0.3px;
+                font-size: 0.875rem;
+                transition: $transition;
+
+                &.active {
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    text-shadow: 1px 0 1em darken(color(satu_darkest), 20%);
+                }
+            }
+        }
+    }
+
+    &-burger {
+        display: none;
+        transition: $transition;
+
+        @include tablet {
+            z-index: 3;
+            display: block;
+        }
+
+        @include pc {
+            display: none;
+        }
+
+        &-click {
+            transform: rotate(360deg);
+
+            .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .line2 {
+                opacity: 0;
+            }
+
+            .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+
+        div {
+            width: 1.5625em;
+            height: 0.1875em;
+            background-color: white;
+            margin: 0.3125em;
+            transition: $transition;
+        }
+    }
+
+    &-bar {
+        @include flex_row;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: $navbar_bar_height;
+        background-color: rgba(color(satu_darkest), 0.6);
+
+        @include tablet {
+            display: none;
+        }
+
+        &-tombol {
+            font-size: 1.6em;
+        }
+
+        &-dot {
+            transition: $transition;
+
+            &-click {
+                transform: rotate(-360deg) rotateX(180deg);
+
+                .line1 {
+                    width: 1.5625em;
+                    height: 0.1875em;
+                    transform: rotate(-45deg) translate(-5px, 7px);
+                    border-radius: 0;
+                }
+
+                .line2 {
+                    opacity: 0;
+                }
+
+                .line3 {
+                    width: 1.5625em;
+                    height: 0.1875em;
+                    transform: rotate(45deg) translate(-5px, -7px);
+                    border-radius: 0;
+                }
+            }
+
+            div {
+                width: 0.2875em;
+                height: 0.2875em;
+                border-radius: 50%;
+                background-color: white;
+                margin: 0.3125em;
+                transition: $transition;
+            }
+        }
+
+    }
+
+    // End .navbar
+}
+
+
+#site-header.transparent-header.clr.navbar_scroll {
+    background-color: white;
+    // background-color: rgba(color(satu-darkest), 0.6);
+    // height: $navbar-height-scroll;
+}
+
+#site-header.transparent-header.clr {
+    position: fixed;
+    top: 0;
+    transition: $transition;
+}

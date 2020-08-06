@@ -1,0 +1,118 @@
+//* Default Colors
+$colors: (
+	/*Default*/
+	white:lighten(#6e8fef, 35%),
+	black:darken(#6e8fef, 50%),
+
+	/*Warna satu*/
+	satu: #6e8fef, //* #7b48da
+	satu_light: lighten(#6e8fef, 10%),
+	satu_lighter: lighten(#6e8fef, 20%),
+	satu_lightest: lighten(#6e8fef, 30%),
+	satu_shine: lighten(#6e8fef, 40%),
+	satu_dark: darken(#6e8fef, 10%),
+	satu_darker: darken(#6e8fef, 20%),
+	satu_darkest: darken(#6e8fef, 30%),
+
+	/*Warna Dua*/
+	dua: #604200,
+	dua_light: lighten(#604200, 10%),
+	dua_lighter: lighten(#604200, 20%),
+	dua_lightest: lighten(#604200, 30%),
+	dua_dark: darken(#604200, 10%),
+	dua_darker: darken(#604200, 20%),
+	dua_darkest: darken(#604200, 30%),
+
+	/*Warna Tiga*/
+	tiga: #FFEECA,
+	tiga_light: lighten(#FFEECA, 10%),
+	tiga_lighter: lighten(#FFEECA, 20%),
+	tiga_lightest: lighten(#FFEECA, 30%),
+	tiga_dark: darken(#FFEECA, 10%),
+	tiga_darker: darken(#FFEECA, 20%),
+	tiga_darkest: darken(#FFEECA, 30%),
+
+	/*Warna Empat*/
+	empat: #BAA89B,
+	empat_light: lighten(#BAA89B, 10%),
+	empat_lighter: lighten(#BAA89B, 20%),
+	empat_lightest: lighten(#BAA89B, 30%),
+	empat_dark: darken(#BAA89B, 10%),
+	empat_darker: darken(#BAA89B, 20%),
+	empat_darkest: darken(#BAA89B, 30%),
+
+	/*Grey*/
+	grey:#B0A8B9,
+	grey_light:lighten(#B0A8B9, 10%),
+	grey_lighter:lighten(#B0A8B9, 20%),
+	grey_lightest:lighten(#B0A8B9, 40%),
+	grey_lightestt:lighten(#B0A8B9, 70%),
+	grey_dark:darken(#B0A8B9, 10%),
+	grey_darker:darken(#B0A8B9, 20%),
+	grey_darkest:darken(#B0A8B9, 40%),
+	grey_darkestt:darken(#B0A8B9, 70%),
+
+	/*Danger*/
+	danger:#D0120F,
+	danger_light:lighten(#D0120F, 10%),
+	danger_lighter:lighten(#D0120F, 20%),
+	danger_lightest:lighten(#D0120F, 30%),
+
+	/*Alert*/
+	alert:#FFC451,
+	alert_light:lighten(#FFC451, 10%),
+	alert_lighter:lighten(#FFC451, 20%),
+	alert_lightest:lighten(#FFC451, 30%),
+);
+
+/*Media Breakpoints*/
+$pc: 950px;
+$tablet: 440px;
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+
+/*Transisi*/
+$transition: 350ms ease-in-out;
+$transition_fast: 200ms ease-in-out;
+$transition_slow: 500ms ease-in-out;
+$transition_slower: 1500ms ease-in-out;
+
+/*Height*/
+$navbar_height:12vh;
+$navbar_height_scroll:10vh;
+$navbar_bar_height:9vh;
+
+$glide-class: 'glide' !default;
+$glide-element-separator: '__' !default;
+$glide-modifier-separator: '--' !default;
+
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x: hidden
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	// font-family: 'Playfair Display', serif;
+}
+
+.fluid {
+	width: 100%;
+	height: 100%;
+}
+
+.transparent {
+	opacity: 0;
+	transition: $transition;
+
+	&:hover {
+		opacity: 1;
+	}
+}

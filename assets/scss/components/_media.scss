@@ -1,0 +1,91 @@
+.media {
+    padding: 3em;
+    background-color: color(white);
+    color: color(black);
+
+    position: relative;
+    // @include flex_row;
+    // justify-content: space_around;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-areas: "judul"
+        "video"
+        "text";
+    grid-gap: 2em;
+
+    @include tablet {
+        grid-template-columns: 46% 46%;
+        grid-template-areas: "judul judul"
+            "video text";
+    }
+
+    &-background {
+        // background-image: url('../assets/icon/Logo-BLM-low.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 300px;
+        opacity: .1;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+
+
+        &-kecil {
+            background-size: 150px;
+        }
+    }
+
+    &-judul {
+        // @include flex_column;
+        grid-area: judul;
+        // width: 50%;
+        color: color(black);
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+
+        @include tablet {
+            text-align: center;
+        }
+
+        p {
+            transition: $transition;
+            padding: 0 0 .2em 0;
+            border-bottom: .2em solid color(satu_darkest);
+
+            @include tablet {
+                padding: 0 1em 0 0;
+                border-bottom: none;
+                border-bottom: .2em solid color(satu_darkest);
+            }
+        }
+
+
+    }
+
+    &-text {
+        // @include flex_column;
+        grid-area: text;
+        // width: 50%;
+        // padding: 3em;
+        color: color(black);
+        text-align: justify;
+
+    }
+
+    &-video {
+        // @include flex_column;
+        grid-area: video;
+        width: 100%;
+        height: 13em;
+        // padding: 3em;
+        color: color(black);
+        text-align: justify;
+
+        @include tablet {
+            width: 75%;
+            height: 16em;
+        }
+    }
+}
